@@ -5,8 +5,8 @@ body{
 }
 .nav{
   padding: 0.5rem 1rem;
-  background:white;
-  border-bottom: 1px solid  rgb(245, 244, 244);
+  background:rgb(201, 180, 180);
+  border-bottom: 1px solid  rgb(168, 120, 120);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -204,3 +204,4 @@ span{
   position: relative;
   top: -3.5rem;
 }
+
