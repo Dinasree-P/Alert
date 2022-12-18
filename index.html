@@ -3,11 +3,9 @@
         <meta charset="utf-8" />
         <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
         <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <title>Image To PDF</title>
-        
+        <title>Img To PDF</title>
     </head>
 
     <body>
@@ -16,8 +14,43 @@
             <i class="fa fa-file-pdf-o"></i> PDF
             </span>
             <div>
-            <button onClick={calcPdfSize(this)} id="convertBtn" convertBtn={convertBtn}>SAVE AS PDF</button>
-            <button onClick={embedImages()} id="download">DOWNLOAD</button>
+          
+                <input type="button" value="Download PDF File" onclick="DownloadFile('Sample.pdf')" /> 
+
+  
+
+                <script type="text/javascript">
+                    function DownloadFile(fileName) {
+                        //Set the File URL.
+                        var url = "Files/" + fileName;
+             
+                        //Create XMLHTTP Request.
+                        var req = new XMLHttpRequest();
+                        req.open("GET", url, true);
+                        req.responseType = "blob";
+                        req.onload = function () {
+                            //Convert the Byte Data to BLOB object.
+                            var blob = new Blob([req.response], { type: "application/octetstream" });
+             
+                            //Check the Browser type and download the File.
+                            var isIE = false || !!document.documentMode;
+                            if (isIE) {
+                                window.navigator.msSaveBlob(blob, fileName);
+                            } else {
+                                var url = window.URL || window.webkitURL;
+                                link = url.createObjectURL(blob);
+                                var a = document.createElement("a");
+                                a.setAttribute("download", fileName);
+                                a.setAttribute("href", link);
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                            }
+                        };
+                        req.send();
+                    };
+                </script>
+
             <button id="upload-msg" type="button" disabled="true">UPLOAD FILES</button>
             </div>
         </div>
@@ -45,8 +78,8 @@
                     
             </div>
         </div>
-      <script src="index.js"></script>
-        
+
+        <script src="index.js"></script>
     </body>
     </html>
     
