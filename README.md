@@ -2,7 +2,7 @@
 
 This project is a simple pdf editor website with Html CSS and javascript. It can convert images into pdf. 
 
-Basic properties:
+BASIC PROPERTIES:
 
 *Required files can be dragged and dropped into the page or else can be uploaded from the folder.
 
