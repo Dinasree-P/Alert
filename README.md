@@ -1,6 +1,9 @@
-*PDF EDITOR*
+#PDF EDITOR
 
 This project is a simple pdf editor website with Html CSS and javascript. It can convert images into pdf. 
+
+![Screenshot (151)](https://user-images.githubusercontent.com/68517660/138468465-34a300cb-b882-45a3-8aea-e578a5f04888.png)
+
 
 BASIC PROPERTIES:
 
