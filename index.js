@@ -35,9 +35,9 @@ encodeImageFileAsURL= (element)=>{
 }
 
 
-saveAsPDF= () => {
-    document.getElementById('upload-msg').style.display = 'none';
-    document.getElementById('convertBtn').style.display = 'inline-block';
+saveAsPDF= ()=>{
+    document.getElementById('upload-msg').style.display= 'none';
+    document.getElementById('convertBtn').style.display= 'inline-block';
 }
 
 
@@ -75,7 +75,7 @@ embedImages= async ()=>{
         })
     }
 
-    //save the pdf pages
+    //save the padf pages
     const pdfBytes= await pdfDoc.save();
 
     //download pdf file 
